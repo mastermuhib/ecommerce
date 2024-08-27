@@ -31,6 +31,8 @@ return new class extends Migration
             $table->float('transaction_fee')->nullable();
             $table->float('delivery_fee')->nullable();
             $table->date('deleted_at')->nullable();
+            $table->timestamp('paid_at')->nullable();
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

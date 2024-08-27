@@ -14,16 +14,10 @@ return new class extends Migration
         Schema::create('detail_transactions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('transaction_id');
-            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
             $table->foreign('transaction_id')
                     ->references('id')
                     ->on('transactions')
-                    ->onDelete(null)
-                    ->onUpdate('cascade');
-            $table->foreign('user_id')
-                    ->references('id')
-                    ->on('users')
                     ->onDelete(null)
                     ->onUpdate('cascade');
             $table->foreign('product_id')
